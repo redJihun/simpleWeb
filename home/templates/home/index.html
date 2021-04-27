@@ -20,7 +20,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="{% url 'homeIndex' %}" class="logo"><span>일성로고</span></a>
+						<a href="{% url 'homeIndex' %}" class="logo"><span><img src="{% static 'home/images/logo_image.png' %}" alt=""></span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -43,6 +43,9 @@
 				<!-- Banner -->
 					<section id="banner" class="major">
 						<div class="inner">
+							<span class="image">
+								<img src="{% static 'home/images/bird_eye_view.jpg' %}" alt="">
+							</span>
 							<header class="major">
 								<h1>㈜일성종합건설</h1>
 							</header>
@@ -64,7 +67,7 @@
 							<section id="one" class="tiles">
 								<article>
 									<span class="image">
-										<img src="{% static 'home/images/pic01.jpg' %}" alt="" />
+										<img src="{% static 'home/images/greeting.jpg' %}" alt="" />
 									</span>
 									<header class="major">
 										<h3><a href="{% url 'introIndex' %}" class="link">인사말</a></h3>
@@ -73,7 +76,7 @@
 								</article>
 								<article>
 									<span class="image">
-										<img src="{% static 'home/images/pic02.jpg' %}" alt="" />
+										<img src="{% static 'home/images/company.jpg' %}" alt="" />
 									</span>
 									<header class="major">
 										<h3><a href="{% url 'introIndex' %}" class="link">회사소개</a></h3>
@@ -82,7 +85,7 @@
 								</article>
 								<article>
 									<span class="image">
-										<img src="{% static 'home/images/pic03.jpg' %}" alt="" />
+										<img src="{% static 'home/images/business.jpg' %}" alt="" />
 									</span>
 									<header class="major">
 										<h3><a href="{% url 'businessIndex' %}" class="link">사업소개</a></h3>
@@ -91,7 +94,7 @@
 								</article>
 								<article>
 									<span class="image">
-										<img src="{% static 'home/images/pic04.jpg' %}" alt="" />
+										<img src="{% static 'home/images/construct.jpg' %}" alt="" />
 									</span>
 									<header class="major">
 										<h3><a href="{% url 'portfolioIndex' %}" class="link">건축공사 실적</a></h3>
@@ -119,15 +122,33 @@
 							</section>
 
 						<!-- Two -->
-							<section id="two">
+							<!-- <section id="banner" class="major">
 								<div class="inner">
+									<span class="image">
+										<img src="{% static 'home/images/bird_eye_view2.jpg' %}" alt="">
+									</span>
 									<header class="major">
 										<h2>고객님들의 행복을 위해 항상 노력하는 ㈜일성종합건설이 되겠습니다. </h2>
 									</header>
-									<p>우리 ㈜일성종합건설은 건설부문의 사업경험을 바탕으로 건설사업관리(CM)부문으로 사업영역을 확장하여 기술 향상을 통한 경쟁력 제고와 효율 극대화에 부단한 노력을 하고 있습니다.</p>
-									<!-- <ul class="actions">
+									<div class="content">
+										<p>우리 ㈜일성종합건설은 건설부문의 사업경험을 바탕으로 건설사업관리(CM)부문으로 사업영역을 확장하여 기술 향상을 통한 경쟁력 제고와 효율 극대화에 부단한 노력을 하고 있습니다.</p>
+									</div>									
+									<ul class="actions">
 										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul> -->
+									</ul>
+								</div>
+							</section> -->
+							<section id="two">
+								<div class="inner">
+									<!-- <span class="image">
+										<img src="{% static 'home/images/bird_eye_view2.jpg' %}" alt="">
+									</span> -->
+									<header class="major">
+										<h2>고객님들의 행복을 위해 항상 노력하는 ㈜일성종합건설이 되겠습니다.</h2>
+									</header>
+									<div class="content">
+										<p>우리 ㈜일성종합건설은 건설부문의 사업경험을 바탕으로 건설사업관리(CM)부문으로 사업영역을 확장하여 기술 향상을 통한 경쟁력 제고와 효율 극대화에 부단한 노력을 하고 있습니다.</p>
+									</div>
 								</div>
 							</section>
 
@@ -139,7 +160,7 @@
 							<ul class="info">
 								<li>㈜일성종합건설</li>
 								<li>대표이사 : 이우노</li>
-								<li>주소 : 경기도 수원시 영통구 대학로 56, 602호(이의동, 리치프라자1) 신분당선 광교역 1번 출구</li></br>
+								<li>주소 : 경기도 수원시 영통구 대학로 56, 602호(이의동, 리치프라자1) 신분당선 광교역 1번 출구</li>
 								<li>대표전화: 031-245-8800</li>
 								<li>FAX: 031-245-8801</li>
 							</ul>
@@ -151,7 +172,9 @@
 								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 							</ul> -->
 							<ul class="copyright">
-								<li>&copy; ㈜일성종합건설 All rights reserved</li><li>Design: HTML5 UP</li>
+								<li>&copy; ㈜일성종합건설 All rights reserved</li>
+								<li>Design : HTML5 UP</li>
+								<li>Images : Unsplash</li>
 							</ul>
 						</div>
 					</footer>
