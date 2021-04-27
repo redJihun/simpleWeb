@@ -130,3 +130,6 @@ dmypy.json
 
 # Commit template
 .gitmessage.txt
+
+# Django SECRET_KEY
+ilsung/secrets.json
