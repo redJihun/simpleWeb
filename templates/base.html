@@ -10,8 +10,8 @@
 		<title>㈜일성종합건설</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{% static 'home/assets/css/main.css' %}" />
-		<noscript><link rel="stylesheet" href="{% static 'home/assets/css/noscript.css' %}" /></noscript>
+		<link rel="stylesheet" href="{% static 'base/assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'base/assets/css/noscript.css' %}" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -20,7 +20,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="{% url 'homeIndex' %}" class="logo"><span><img src="{% static 'home/images/logo_image.png' %}" alt=""></span></a>
+						<a href="{% url 'homeIndex' %}" class="logo"><span><img src="{% static 'base/images/logo_image.png' %}" alt=""></span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -38,7 +38,10 @@
 							<li><a href="#" class="button primary fit">Get Started</a></li>
 							<li><a href="#" class="button fit">Log In</a></li>
 						</ul> -->
-					</nav>					
+					</nav>		
+					
+				{% block content %}
+				{% endblock content %}
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -68,13 +71,13 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="{% static 'home/assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'home/assets/js/jquery.scrolly.min.js' %}"></script>
-			<script src="{% static 'home/assets/js/jquery.scrollex.min.js' %}"></script>
-			<script src="{% static 'home/assets/js/browser.min.js' %}"></script>
-			<script src="{% static 'home/assets/js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'home/assets/js/util.js' %}"></script>
-			<script src="{% static 'home/assets/js/main.js' %}"></script>
+			<script src="{% static 'base/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/util.js' %}"></script>
+			<script src="{% static 'base/assets/js/main.js' %}"></script>
 
 	</body>
 </html>
