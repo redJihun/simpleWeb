@@ -5,8 +5,14 @@
 <!-- Banner -->
 <section id="banner">
     <div class="inner">
-        <h2><img src="{% static 'home/images/logo_letter.png' %}" alt=""></h2>
-        <p>㈜일성종합건설은 최고의 서비스와 기술력으로 고객님께 감동을 드리겠습니다.
+        <div class="box alt">
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-4"></div>
+                <div class="col-4"><span class="image fit"><img src="{% static 'home/images/logo_letter.png' %}" alt=""></span></div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+        <p>스마트 시티의 내일, ㈜일성종합건설이 함께 합니다
     </div>
     <a href="#one" class="more scrolly">더 보기</a>
 </section>
@@ -34,24 +40,24 @@
         <div class="image"><img src="{% static 'home/images/smart_city.jpg' %}" alt="" /></div>
         <div class="content">
             <h2>Company</h2>
-            <p>㈜일성종합건설은 최고의 기술력으로 스마트 시티의 내일을 만들어 갑니다.</p>
-            <a href="{% url 'introIndex' %}" class="button">more...</a>
+            <p>최고의 기술력으로 만들어 가는 스마트 시티의 내일</p>
+            <a href="{% url 'companyIndex' %}" class="button">more...</a>
         </div>
     </section>
     <section class="spotlight">
         <div class="image"><img src="{% static 'home/images/business.jpg' %}" alt="" /></div>
         <div class="content">
             <h2>Business</h2>
-            <p>건설과 엔지니어링, 건설사업관리(CM)까지 아우르는 ㈜일성종합건설입니다.</p>
-            <a href="{% url 'introIndex' %}" class="button">more...</a>
+            <p>건설과 엔지니어링, 건설사업관리(CM)까지 포괄하는 사업영역</p>
+            <a href="{% url 'businessIndex' %}" class="button">more...</a>
         </div>
     </section>
     <section class="spotlight">
         <div class="image"><img src="{% static 'home/images/construct2.jpg' %}" alt="" /></div>
         <div class="content">
             <h2>Portfolio</h2>
-            <p>실적이 증명하는 ㈜일성종합건설의 기술력 지금 확인하세요.</p>
-            <a href="{% url 'introIndex' %}" class="button">more...</a>
+            <p>실적이 증명하는 기술력</p>
+            <a href="{% url 'portfolioIndex' %}" class="button">more...</a>
         </div>
     </section>
 </section>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>회사현황</h2>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+                                <!-- history -->
+								<h3>연혁</h3>
+                                <span class="image"><img src="{% static 'company/images/history.png' %}" alt="" /></span>
+								<hr />
+
+                                <!-- status -->
+                                <h3>회사 정보</h3>
+                                <span class="image"><img src="{% static 'company/images/status.png' %}" alt="" /></span>
+                                <hr />
+
+                                <!-- organization -->
+                                <h3>조직도</h3>
+                                <span class="image"><img src="{% static 'company/images/organization.png' %}" alt="" /></span>
+                                <hr />
+
+                                <!-- worker -->
+                                <h3>기술 인력</h3>
+                                <span class="image"><img src="{% static 'company/images/worker.png' %}" alt="" /></span>
+
+							</div>
+						</section>
+					</article>
+{% endblock content %}

@@ -1,1 +1,41 @@
-<h1>business index</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>사업분야</h2>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+                                <!-- construct -->
+								<h3>건설 부문</h3>
+                                <div class="box alt">
+                                    <div class="row gtr-50 gtr-uniform">
+                                        <div class="col-8"><span class="image fit"><img src="{% static 'business/images/construct.jpg' %}" alt="" /></span></div>
+                                    </div>
+                                </div>
+								<hr />
+
+                                <!-- engineering -->
+								<h3>엔지니어링 부문</h3>
+                                <div class="box alt">
+                                    <div class="row gtr-50 gtr-uniform">
+                                        <div class="col-8"><span class="image fit"><img src="{% static 'business/images/engineering.jpg' %}" alt="" /></span></div>
+                                    </div>
+                                </div>
+								<hr />
+
+                                <!-- management -->
+								<h3>건설사업관리 부문</h3>
+                                <div class="box alt">
+                                    <div class="row gtr-50 gtr-uniform">
+                                        <div class="col-8"><span class="image fit"><img src="{% static 'business/images/management.jpg' %}" alt="" /></span></div>
+                                    </div>
+                                </div>
+                                
+							</div>
+						</section>
+					</article>
+{% endblock content %}

@@ -20,7 +20,7 @@
 
                 <!-- Header -->
                     <header id="header" class="alt">
-                        <h1><a href="index.html"><img src="{% static 'base/images/logo_image.png' %}" alt=""></a></h1>
+                        <a href="{% url 'homeIndex' %}"><img class="image" src="{% static 'base/images/logo_image.png' %}" alt=""></a>
                         <nav id="nav">
                             <ul>
                                 <li class="special">
@@ -29,7 +29,7 @@
                                         <ul>
                                             <li><a href="{% url 'homeIndex' %}">Home</a></li>
                                             <li><a href="{% url 'introIndex' %}">Greeting</a></li>
-                                            <li><a href="#">Company</a></li>
+                                            <li><a href="{% url 'companyIndex' %}">Company</a></li>
                                             <li><a href="{% url 'businessIndex' %}">Business</a></li>
                                             <li><a href="{% url 'portfolioIndex' %}">Portfolio</a></li>
                                         </ul>
