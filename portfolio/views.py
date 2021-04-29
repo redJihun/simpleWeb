@@ -11,3 +11,6 @@ class IndexView(TemplateView):
     template_name = 'portfolio/index.html'
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+
+# def create(request):
+#     portfolio.photo - request.FILES['photo']
