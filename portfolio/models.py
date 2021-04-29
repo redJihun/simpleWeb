@@ -23,6 +23,7 @@ def date_upload_to(instance, filename):
 
 class Portfolio(models.Model):
     """Model definition for MODELNAME."""
+    id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
 
     # TODO: Define fields here
