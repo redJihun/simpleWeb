@@ -133,3 +133,6 @@ dmypy.json
 
 # Django SECRET_KEY
 secrets.json
+
+# Upload data
+media/
