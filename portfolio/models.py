@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 import os
 from uuid import uuid4
@@ -22,13 +23,17 @@ def date_upload_to(instance, filename):
 
 class Portfolio(models.Model):
     """Model definition for MODELNAME."""
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
 
     # TODO: Define fields here
-    name = models.CharField(max_length = 20, default='-')
+    title = models.CharField(max_length = 50, default='-')
     location = models.CharField(max_length = 100, default='-')
     service = models.CharField(max_length = 20, default='-')
     area = models.CharField(max_length = 20, default='0')
     # photo = models.ImageField(upload_to=date_upload_to)
+
+    def __str__(self):
+        return self.title
 
 class PortfolioImage(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
