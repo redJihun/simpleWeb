@@ -132,4 +132,4 @@ dmypy.json
 .gitmessage.txt
 
 # Django SECRET_KEY
-ilsung/secrets.json
+secrets.json
