@@ -18,13 +18,13 @@
 </section>
 
 <!-- One -->
-<section id="one" class="wrapper style2 special">
+<section id="one" class="wrapper style5 special">
     <div class="inner">
         <header class="major">
             <h2>Greeting</h2>
             <p>오늘의 ㈜일성종합건설이 있기까지 관심과 사랑으로 </p><br>
             <p>격려해 주시는 고객 여러분께 감사드립니다.</p>
-            <a href="{% url 'introIndex' %}" class="button">more...</a>
+            <a href="{% url 'intro:introIndex' %}" class="button">more...</a>
         </header>
         <!-- <ul class="icons major">
             <li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
@@ -35,13 +35,13 @@
 </section>
 
 <!-- Two -->
-<section id="two" class="wrapper alt style2">
+<section id="two" class="wrapper alt style5">
     <section class="spotlight">
         <div class="image"><img src="{% static 'home/images/smart_city.jpg' %}" alt="" /></div>
         <div class="content">
             <h2>Company</h2>
             <p>최고의 기술력으로 만들어 가는 스마트 시티의 내일</p>
-            <a href="{% url 'companyIndex' %}" class="button">more...</a>
+            <a href="{% url 'company:companyIndex' %}" class="button">more...</a>
         </div>
     </section>
     <section class="spotlight">
@@ -49,7 +49,7 @@
         <div class="content">
             <h2>Business</h2>
             <p>건설과 엔지니어링, 건설사업관리(CM)까지 포괄하는 사업영역</p>
-            <a href="{% url 'businessIndex' %}" class="button">more...</a>
+            <a href="{% url 'business:businessIndex' %}" class="button">more...</a>
         </div>
     </section>
     <section class="spotlight">
@@ -57,7 +57,7 @@
         <div class="content">
             <h2>Portfolio</h2>
             <p>실적이 증명하는 기술력</p>
-            <a href="{% url 'portfolioIndex' %}" class="button">more...</a>
+            <a href="{% url 'portfolio:portfolioIndex' %}" class="button">more...</a>
         </div>
     </section>
 </section>
