@@ -1,6 +1,21 @@
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="저장">
-    </form>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>건축공사 실적</h2>
+						</header>
+						<section class="wrapper style5">
+                            
+                            <div class="container">
+                                <form method="POST" action="">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <p><input type="file" name="images" multiple></p>
+                                    <p><input type="submit" value="작성하기"></p>
+                                </form>
+                            </div>
+						</section>
+					</article>
+{% endblock content %}

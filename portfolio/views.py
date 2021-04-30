@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import TemplateView, DetailView
 
-from .forms import PortfolioForm
+from .forms import PortfolioForm, PortfolioImageForm
 
 # Create your views here.
 
@@ -21,6 +21,12 @@ class CreatePortfolio(TemplateView):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
+            for img in request.FILES.getlist('images'):
+                print('1')
+                photo = self.PortfolioImage()
+                photo.portfolio = form
+                photo.image = img
+                photo.save()
             return redirect('portfolio:portfolioIndex')
         else:
             return redirect('portfolio:portfolioIndex')
