@@ -1,11 +1,12 @@
 from .models import Portfolio, PortfolioImage
+from django import forms
 
 class PortfolioForm(forms.ModelForm):
     class Meta:
         model = Portfolio
-        fields = ['content', ]
+        fields = ['id', 'title', 'location', 'service', 'area', ]
 
 class PortfolioImageForm(forms.ModelForm):
     class Meta:
         model = PortfolioImage
-        fields = ['file', ]
+        fields = ['image', ]

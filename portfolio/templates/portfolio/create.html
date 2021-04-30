@@ -1,7 +1,6 @@
-{% extends 'bast.html' %}
-{% load static %}
 
-{% block content %}
-    
-{% endblock content %}
-    
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="저장">
+    </form>

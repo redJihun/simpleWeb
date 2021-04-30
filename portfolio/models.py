@@ -1,9 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 import os
 from uuid import uuid4
 from django.utils import timezone
+from django.contrib.auth.models import User
+
+# from ckeditor.fields import RichTextUploadingField
 
 # Create your models here.
 
@@ -23,8 +25,9 @@ def date_upload_to(instance, filename):
 
 class Portfolio(models.Model):
     """Model definition for MODELNAME."""
-    id = models.BigAutoField(primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
+    id = models.AutoField(primary_key=True)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
     # TODO: Define fields here
     title = models.CharField(max_length = 50, default='-')
@@ -39,3 +42,4 @@ class Portfolio(models.Model):
 class PortfolioImage(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='portfolio', blank=True, null=True)
+    
