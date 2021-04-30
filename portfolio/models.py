@@ -30,6 +30,7 @@ class Portfolio(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
 
     # TODO: Define fields here
+    type = models.CharField(max_length = 50, default='주거복합')
     title = models.CharField(max_length = 50, default='-')
     location = models.CharField(max_length = 100, default='-')
     service = models.CharField(max_length = 20, default='-')

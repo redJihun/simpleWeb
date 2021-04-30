@@ -2,6 +2,33 @@
 {% load static %}
 
 {% block content %}
-    
+    <!-- Main -->
+    <article id="main">
+        <header>
+            <h2>회사소개</h2>
+        </header>
+        <section class="wrapper style5">
+            <div class="inner">
+
+                <!-- greeting -->
+                <hr />
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <img class="img-fluid" src="#" alt="">
+                    </div>
+                
+                    <div class="col-md-4">
+                        <p>{{ portfolio_detail.building_type }}</p>
+                        <p><strong>이 름</strong> &nbsp; &nbsp; &nbsp; {{ portfolio_detail.title }}</p>
+                        <p><strong>위 치</strong> &nbsp; &nbsp; &nbsp; {{ portfolio_detail.location }}</p>
+                        <p><strong>서비스</strong> &nbsp; &nbsp; &nbsp; {{ portfolio_detail.service }}</p>
+                        <p><strong>면 적</strong> &nbsp; &nbsp; &nbsp; {{ portfolio_detail.area }}</p>
+                    </div>
+                </div>
+                <hr />
+            </div>
+        </section>
+    </article>
 {% endblock content %}
     
