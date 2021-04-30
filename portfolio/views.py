@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView, DetailView
 
 from .forms import PortfolioForm
-from bookmark.models import Bookmark
 
 # Create your views here.
 
@@ -22,9 +21,9 @@ class CreatePortfolio(TemplateView):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('IndexView')
+            return redirect('portfolio:portfolioIndex')
         else:
-            return redirect('IndexView')
+            return redirect('portfolio:portfolioIndex')
     def get(self, request, *args, **kwargs):
         form = self.form_class()
         return render(request, self.template_name, {'form': form})
