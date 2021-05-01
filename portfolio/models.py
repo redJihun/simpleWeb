@@ -25,22 +25,22 @@ def date_upload_to(instance, filename):
 
 class Portfolio(models.Model):
     """Model definition for MODELNAME."""
-    id = models.AutoField(primary_key=True)
+    # id = models.AutoField(primary_key=True)
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
 
     # TODO: Define fields here
-    type = models.CharField(max_length = 50, default='')
-    title = models.CharField(max_length = 50, default='')
-    location = models.CharField(max_length = 100, default='')
-    service = models.CharField(max_length = 20, default='')
-    area = models.CharField(max_length = 20, default='')
+    title = models.CharField(max_length = 50, default='', null=True)
+    buildingType = models.CharField(max_length = 1, choices=(('C','상업시설'), ('R','주거복합'), ('H','주택')),blank=True, null=True)
+    location = models.CharField(max_length = 100, default='', null=True)
+    service = models.CharField(max_length = 20, default='', null=True)
+    area = models.CharField(max_length = 20, default='', null=True)
     # photo = models.ImageField(upload_to=date_upload_to)
 
     def __str__(self):
         return self.title
 
 class PortfolioImage(models.Model):
-    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
+    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to='portfolio', blank=True, null=True)
     

@@ -9,10 +9,21 @@
 						<section class="wrapper style5">
                             
                             <div class="container">
-                                <form method="POST" action="">
+                                <form method="POST" action="{% url 'portfolio:create' %}" enctype="multipart/form-data">
                                     {% csrf_token %}
-                                    {{ form.as_p }}
-                                    <p><input type="file" name="images" multiple></p>
+                                    <!-- {{ form.as_p }} -->
+                                    <label for="title">제목</label>
+                                    <p id="title"><input type="text" name="title"></p>
+                                    <!-- <label for="buildingType">건물유형</label>
+                                    <p id="buildingType"><input type="text" name="buildingType"></p> -->
+                                    <label for="location">위치</label>
+                                    <p id="location"><input type="text" name="location"></p>
+                                    <label for="service">서비스</label>
+                                    <p id="service"><input type="text" name="service"></p>
+                                    <label for="area">면적</label>
+                                    <p id="area"><input type="text" name="area"></p>
+                                    <label for="images">첨부이미지</label>
+                                    <p id="images"><input type="file" name="images" multiple></p>
                                     <p><input type="submit" value="작성하기"></p>
                                 </form>
                             </div>
