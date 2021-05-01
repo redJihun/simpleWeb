@@ -7,7 +7,8 @@ from .apps import PortfolioConfig as config
 app_name = config.name
 urlpatterns = [
     # path('', views.index, name='index'),
-    path('', views.IndexView.as_view(), name='portfolioIndex'),
+    path('', views.index, name='index'),
+    # path('new/', views.NewPortfolio.as_view(), name='new'),
     path('create/', views.CreatePortfolio.as_view(), name='create'),
-    path('detail/<int:portfolio_id>', views.ReadPortfolio.as_view(), name='read'),
+    path('detail/<int:portfolio_id>', views.detail , name='detail'),
 ]

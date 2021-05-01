@@ -9,13 +9,19 @@
 						<section class="wrapper style5">
                             
                             <div class="container">
-                                <form method="POST" action="{% url 'portfolio:create' %}" enctype="multipart/form-data">
+                                <form method="POST" action="{% url 'portfolio:create' %}" >
                                     {% csrf_token %}
                                     <!-- {{ form.as_p }} -->
                                     <label for="title">제목</label>
                                     <p id="title"><input type="text" name="title"></p>
-                                    <!-- <label for="buildingType">건물유형</label>
-                                    <p id="buildingType"><input type="text" name="buildingType"></p> -->
+                                    <label for="buildingType">건물분류</label>
+                                    <p>
+                                        <select id="buildingType" name="buildingType">
+                                        <option value="C">상업시설</option>
+                                        <option value="R">주거복합</option>
+                                        <option value="H">주택</option>
+                                        </select>
+                                    </p>
                                     <label for="location">위치</label>
                                     <p id="location"><input type="text" name="location"></p>
                                     <label for="service">서비스</label>
