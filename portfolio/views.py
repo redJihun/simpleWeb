@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import TemplateView, DetailView, CreateView
+from django.urls import reverse
 
 from .forms import PortfolioForm, PortfolioImageForm
-from .models import Portfolio
+from .models import Portfolio, PortfolioImage
 
 # Create your views here.
 
@@ -33,17 +34,17 @@ class CreatePortfolio(CreateView):
         # portfolio.service = request.POST['service']
         # portfolio.area = request.POST['area']
         if portfolio.is_valid():
-            portfolio.save()
+            temp = portfolio.save()
             for img in request.FILES.getlist('images'):
-                portfolio_image = self.portfolio_image_class(request.POST)
+                portfolio_image = self.portfolio_image_class(portfolio=portfolio, image=img)
                 # portfolio_image.portfolio = portfolio
                 # portfolio_image.image = img
                 if portfolio_image.is_valid():
                     portfolio_image.save()
-                    return redirect('portfolio:detail'+ str(portfolio.primary_key))
+                    # return redirect(reverse('portfolio:detail', args=))
                 else:
                     return redirect('portfolio:create')
-            return redirect('portfolio:detail'+ str(portfolio.primary_key))
+            return redirect('portfolio:detail',temp.id)
         else:
             return redirect('portfolio:create')
     def get(self, request, *args, **kwargs):
@@ -68,4 +69,5 @@ class CreatePortfolio(CreateView):
 def detail(request, portfolio_id):
     template_name = "portfolio/detail.html"
     portfolio_detail = get_object_or_404(Portfolio, pk=portfolio_id)
+    # portfolio_image = get_object_or_404(PortfolioImage, portfolio=portfolio_detail)
     return render(request, template_name, {'portfolio_detail': portfolio_detail})
