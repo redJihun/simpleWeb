@@ -5,15 +5,12 @@
     <!-- Main -->
     <article id="main">
         <header>
-            <h2>회사소개</h2>
+            <h2>건축공사 실적</h2>
         </header>
         <section class="wrapper style5">
             <div class="inner">
-
-                <!-- greeting -->
                 <hr />
                 <div class="row">
-
                     <div class="col-md-8">
                         {% for photo in portfolio_image %}
                             <img class="img-fluid" src={{ photo.image.url }}>
@@ -26,6 +23,9 @@
                         <p><strong>위 치</strong> &nbsp; &nbsp; &nbsp; &nbsp; {{ portfolio_detail.location }}</p>
                         <p><strong>서비스</strong> &nbsp; &nbsp; &nbsp; {{ portfolio_detail.service }}</p>
                         <p><strong>면 적</strong> &nbsp; &nbsp; &nbsp; &nbsp; {{ portfolio_detail.area }}</p>
+                        <p><ul class="actions">
+                            <li><a href="{% url 'portfolio:index' %}" class="button">목록보기</a></li>
+                        </ul></p>
                     </div>
                 </div>
                 <hr />

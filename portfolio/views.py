@@ -10,7 +10,7 @@ from .models import Portfolio, PortfolioImage
 
 def index(request):
     template_name = 'portfolio/index.html'
-    portfolios = Portfolio.objects.all()
+    portfolios = reversed(Portfolio.objects.all())
     return render(request, template_name, {'portfolios':portfolios})
 
 
@@ -20,6 +20,9 @@ class CreatePortfolio(CreateView):
     portfolio_image_class = PortfolioImageForm 
     def post(self, request, *args, **kwargs):
         portfolio = self.portfolio_class(request.POST)
+        portfolio.data._mutable = True
+        portfolio.data['area'] = str(portfolio.data.get('area') + '㎡')
+        portfolio.data._mutable = False
         if portfolio.is_valid():
             temp = portfolio.save()
             for img in request.FILES.getlist('images'):
@@ -47,7 +50,5 @@ def detail(request, portfolio_id):
     portfolio_detail = get_object_or_404(Portfolio, pk=portfolio_id)
     building_type = '상업시설' if portfolio_detail.buildingType=='C' else( '주거복합' if portfolio_detail.buildingType=='R' else '주택' ) 
     portfolio_image = portfolio_detail.portfolioimage_set.all()
-    for item in portfolio_image:
-        print(item.image.url)
     # portfolio_image = get_object_or_404(PortfolioImage, portfolio=portfolio_detail)
     return render(request, template_name, {'portfolio_detail': portfolio_detail, 'building_type': building_type, 'portfolio_image': portfolio_image})
