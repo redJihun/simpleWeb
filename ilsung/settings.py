@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ckeditor',
+    'login.apps.LoginConfig', 
 ]
 
 MIDDLEWARE = [
@@ -156,3 +156,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # CKEDITOR path 'media/~'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+# 로그인 관련 URL
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -10,6 +10,7 @@
                             
                             <div class="container">
                                 <!-- todo: 저장된 데이터 모두 불러와서 순서대로 배치 반복문 -->
+                                {% if user.is_authenticated %}
                                 <div class="row">
                                     <div class="col-6 col-12-medium">
                                         <ul class="actions">
@@ -17,6 +18,7 @@
                                         </ul>
                                     </div>
                                 </div>
+                                {% endif %}
                                 <div class="row">
                                     {% for portfolio in portfolios %}
                                         <div class="col-xl-3 col-md-6 mb-4">

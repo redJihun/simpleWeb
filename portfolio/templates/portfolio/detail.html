@@ -8,12 +8,15 @@
             <h2>건축공사 실적</h2>
         </header>
         <section class="wrapper style5">
-            <div class="inner">
+            
+            <div class="inner"><h2 class="text-center">상세정보</h2>
                 <hr />
                 <div class="row">
                     <div class="col-md-7">
                         {% for photo in portfolio_image %}
-                            <img class="img-fluid" src={{ photo.image.url }}>
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <img class="img-fluid embed-responsive-item" src={{ photo.image.url }}>
+                            </div>
                         {% endfor %}
                     </div>
                 

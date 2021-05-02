@@ -33,6 +33,12 @@
                                             <li><a href="{% url 'company:companyIndex' %}">Company</a></li>
                                             <li><a href="{% url 'business:businessIndex' %}">Business</a></li>
                                             <li><a href="{% url 'portfolio:index' %}">Portfolio</a></li>
+											<br><br><br>
+											{% if user.is_authenticated %}
+												<li><a href="{% url 'login:logout' %}">Log-out</a></li>
+											{% else %}
+												<li><a href="{% url 'login:login' %}">Log-in</a></li>
+											{% endif %}
                                         </ul>
                                     </div>
                                 </li>

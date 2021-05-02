@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<article id="main">
+    <header>
+        <h2>㈜일성종합건설</h2>
+    </header>
+    <section class="wrapper style5">
+        
+        <div class="inner"><h2 class="text-center">로그인</h2>
+            <hr />
+                {% if form.errors %}
+                    <p>아이디와 패스워드가 일치하지 않습니다. 다시 시도하세요.</p>
+                {% endif %}
+
+                {% if next %}
+                    {% if user.is_authenticated %}
+                        <p>해당 계정은 페이지에 접근할 수 없습니다. 
+                            접근 가능한 계정으로 다시 시도하세요.</p>
+                    {% else %}
+                        <p>페이지를 보려면 로그인하세요.</p>
+                    {% endif %}
+                {% endif %}
+
+                <form method="post" action="{% url 'login:login' %}">
+                    {% csrf_token %}
+
+                    <div>
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+                    </div>
+                    <div>
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{{ form.password }}</td>
+                    </div><br><br>
+
+                    <div>
+                        <input type="submit" value="login" />
+                        <input type="hidden" name="next" value="{{ next }}" />
+                    </div>
+                </form>
+
+                {# Assumes you setup the password_reset view in your URLconf #}
+                <!-- <p><a href="{% url 'password_reset' %}">비밀번호를 잊으셨나요?</a></p> -->
+
+
+
+            <hr />
+        </div>
+    </section>
+</article>
+{% endblock content %}

@@ -26,5 +26,6 @@ urlpatterns = [
     path('company/', include('company.urls')),
     path('business/', include('business.urls')),
     path('portfolio/', include('portfolio.urls')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('login/', include('login.urls')), 
+    path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
