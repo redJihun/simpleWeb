@@ -31,7 +31,7 @@ class Portfolio(models.Model):
 
     # TODO: Define fields here
     title = models.CharField(max_length = 50, default='', null=True)
-    buildingType = models.CharField(max_length = 1, choices=(('C','상업시설'), ('R','주거복합'), ('H','주택')),blank=True, null=True)
+    buildingType = models.CharField(max_length = 1, choices=(('C','상업시설'), ('R','주거복합'), ('H','주택')),blank=True, null=True, default='C')
     location = models.CharField(max_length = 100, default='', null=True)
     service = models.CharField(max_length = 20, default='', null=True)
     area = models.CharField(max_length = 20, default='', null=True)
