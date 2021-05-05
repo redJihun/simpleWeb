@@ -40,6 +40,7 @@ class Portfolio(models.Model):
     def __str__(self):
         return self.title
 
+
 class PortfolioImage(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to=date_upload_to, blank=True, null=True)

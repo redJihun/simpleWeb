@@ -29,6 +29,20 @@
                                                     </div>
                                                     <div class="card-body text-center">
                                                         <h5 class="card-title mb-0">{{ portfolio.title }}</h5>
+                                                        {% if user.is_authenticated %}
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <ul class="actions">
+                                                                    <a href="{% url 'portfolio:update' portfolio.id%}" class="button">수정</a>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-5">
+                                                                <ul class="actions">
+                                                                    <a href="{% url 'portfolio:delete' portfolio.id%}" class="button">삭제</a>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        {% endif %}
                                                     </div>
                                                 </a>
                                             </div>

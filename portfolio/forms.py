@@ -11,3 +11,7 @@ class PortfolioImageForm(forms.ModelForm):
     class Meta:
         model = PortfolioImage
         fields = ['portfolio','image', ]
+
+        def __init__(self, *args, **kwargs):
+            self.fields['image'].widget.attrs.update(
+                {'class': 'fileinput', 'multiple': True})

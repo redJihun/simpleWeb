@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<article id="main">
+    <header>
+        <h2>㈜일성종합건설</h2>
+    </header>
+    
+
+    {% if user.is_authenticated %}
+    <section class="wrapper style5">
+        
+        <div class="inner">
+           <form method="POST" class="post-form">
+               {%csrf_token%}
+
+               <p class="text-center">게시물을 삭제하시겠습니까?</p>
+               <p>
+                   <div class="row">
+                        <div class="col-3">
+                        </div>
+                        <div class="col-3 text-right">
+                            <input type="submit" class="save btn btn-default" value="삭제">
+                        </div>
+                        <div class="col-3">
+                            <input type="button" class="save btn btn-default" value="취소" onClick="location.href='{% url 'portfolio:index' %}'">
+                        </div>
+                   </div>
+               </p>
+           </form>
+        </div>
+    </section>
+    {% else %}
+    <section class="wrapper style5">
+        <div class="container">
+            <h3>접근할 수 없는 페이지입니다.</h3>
+        </div>
+    </section>    
+    {% endif %}
+</article> 
+<hr />
+{% endblock content %}

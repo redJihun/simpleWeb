@@ -1,7 +1,0 @@
-{% extends 'bast.html' %}
-{% load static %}
-
-{% block content %}
-    
-{% endblock content %}
-    

@@ -1,41 +1,66 @@
 {% extends 'base.html' %}
+
 {% load static %}
+
 {% block content %}
+
     {% if user.is_authenticated %}
-        <!-- Main -->
-            <article id="main">
-                <header>
-                    <h2>글쓰기</h2>
-                </header>
-                <section class="wrapper style5">
-                    
-                    <div class="container">
-                        <form method="POST" action="{% url 'portfolio:create' %}" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <!-- {{ form.as_p }} -->
-                            <label for="title">제목</label>
-                            <p id="title"><input type="text" name="title"></p>
-                            <label for="buildingType">건물분류</label>
-                            <p>
-                                <select id="buildingType" name="buildingType">
-                                <option value="C">상업시설</option>
-                                <option value="R">주거복합</option>
-                                <option value="H">주택</option>
-                                </select>
-                            </p>
-                            <label for="location">위치</label>
-                            <p id="location"><input type="text" name="location"></p>
-                            <label for="service">서비스</label>
-                            <p id="service"><input type="text" name="service"></p>
-                            <label for="area">면적</label>
-                            <p id="area"><input type="text" name="area"></p>
-                            <label for="images">첨부이미지</label>
-                            <p><input type="file" name="images" multiple></p><hr/>
-                            <p><input type="submit" value="작성하기"></p>
-                        </form>
+
+    <!-- Main -->
+    <article id="main">
+        <header>
+            <h2>글쓰기</h2>
+        </header>
+        <section class="wrapper style5">
+            
+            <div class="container">
+                <form method="POST" action="{% url 'portfolio:create' %}" enctype="multipart/form-data">
+                    <label for="images">첨부이미지</label>
+                    <div>
+                        <input type="file" id="file_uploads" name="images" accept=".jpg, .png" multiple>
                     </div>
-                </section>
-            </article>
+                    <div class="preview">
+                        <p></p>
+                    </div>
+                    
+                    {% csrf_token %}
+                    
+                    <label for="title">제목</label>
+                    <p id="title"><input type="text" name="title"></p>
+
+                    <label for="buildingType">건물분류</label>
+                    <p>
+                        <select id="buildingType" name="buildingType">
+                        <option value="C">상업시설</option>
+                        <option value="R">주거복합</option>
+                        <option value="H">주택</option>
+                        </select>
+                    </p>
+
+                    <label for="location">위치</label>
+                    <p id="location"><input type="text" name="location"></p>
+
+                    <label for="service">서비스</label>
+                    <p id="service"><input type="text" name="service"></p>
+
+                    <label for="area">면적</label>
+                    <p id="area"><input type="text" name="area"></p>
+
+                    <label for="images">첨부이미지</label>
+                    <div>
+                        <input type="file" id="file_uploads" name="images" accept=".jpg, .png" multiple>
+                    </div>
+                    <div class="preview">
+                        <p></p>
+                    </div>
+
+                    <p><input type="submit" value="작성하기"></p>
+                </form>
+            </div>
+
+        </section>
+    </article>
+
     {% else %}
     <article id="main">
         <section class="wrapper style5">
@@ -45,5 +70,7 @@
             </div>
         </section>
     </article>
+
     {% endif %}
+
 {% endblock content %}
