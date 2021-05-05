@@ -136,3 +136,9 @@ secrets.json
 
 # Upload data
 # media/
+
+# backup files 
+*.bak
+
+# DB
+*.sqlite3
