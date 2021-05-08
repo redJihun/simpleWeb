@@ -15,14 +15,7 @@
             
             <div class="container">
                 <form method="POST" action="{% url 'portfolio:create' %}" enctype="multipart/form-data">
-                    <label for="images">첨부이미지</label>
-                    <div>
-                        <input type="file" id="file_uploads" name="images" accept=".jpg, .png" multiple>
-                    </div>
-                    <div class="preview">
-                        <p></p>
-                    </div>
-                    
+                                        
                     {% csrf_token %}
                     
                     <label for="title">제목</label>
