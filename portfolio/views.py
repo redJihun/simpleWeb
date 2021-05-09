@@ -64,8 +64,24 @@ class UpdatePortfolio(UpdateView):
         portfolio = get_object_or_404(Portfolio, pk=self.kwargs['pk'])
         portfolio_images = portfolio.portfolioimage_set.all()
         # building_type = '상업시설' if portfolio.buildingType=='C' else( '주거복합' if portfolio.buildingType=='R' else '주택' ) 
+        # for img in request.FILES.getlist('images'):
+        #     portfolio_image = PortfolioImage()
+        #     portfolio_image.portfolio_id = portfolio.id
+        #     portfolio_image.image = img
+        #     portfolio_image.save()
 
         return portfolio
+    
+    # def post(self, request, *args, **kwargs):
+    #     portfolio = get_object_or_404(Portfolio, pk=self.kwargs['pk'])
+        
+    #     for img in request.FILES.getlist('images'):
+    #         portfolio_image = PortfolioImage()
+    #         portfolio_image.portfolio_id = portfolio.id
+    #         portfolio_image.image = img
+    #         portfolio_image.save()
+            
+    #     return portfolio
 
 class DeletePortfolio(DeleteView):
     template_name = 'portfolio/delete.html'
