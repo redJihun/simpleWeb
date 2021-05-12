@@ -1,0 +1,49 @@
+#!/bin/bash
+
+
+
+NAME="ilsung_web"
+
+DJANGODIR=../../
+
+SOCKFILE=../../run/gunicorn.sock
+
+USER=root
+
+NUM_WORKERS=3
+
+DJANGO_SETTINGS_MODULE=ilsung.settings
+
+DJANGO_WSGI_MODULE=ilsung.wsgi
+
+
+
+echo "Starting $NAME as `whoami`"
+
+
+
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+
+export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+
+
+
+RUNDIR=$(dirname $SOCKFILE)
+
+test -d $RUNDIR || mkdir -p $RUNDIR
+
+
+
+exec /usr/local/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+
+  --name $NAME \
+
+  --workers $NUM_WORKERS \
+
+  --user=$USER \
+
+  --bind=unix:$SOCKFILE \
+
+  --log-level=debug \
+
+  --log-file=-
