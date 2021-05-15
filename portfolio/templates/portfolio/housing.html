@@ -7,6 +7,24 @@
 							<h2>건축공사 실적</h2>
 						</header>
 						<section class="wrapper style5">
+
+                            <section id="tabs">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 ">
+                                            <nav>
+                                                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                                    <a class="nav-item nav-link font-weight-bold" id="nav-index-tab" href="{% url 'portfolio:index' %}" role="tab" aria-controls="nav-index"  aria-selected="false">전체</a>
+                                                    <a class="nav-item nav-link font-weight-bold" id="nav-commercial-tab" href="{% url 'portfolio:commercial' %}" role="tab" aria-controls="nav-commercial"  aria-selected="true">상업건물</a>
+                                                    <a class="nav-item nav-link font-weight-bold" id="nav-residential-tab" href="{% url 'portfolio:residential' %}" role="tab" aria-controls="nav-residential"  aria-selected="false">주거복합</a>
+                                                    <a class="nav-item nav-link active font-weight-bold" id="nav-housing-tab" href="{% url 'portfolio:housing' %}" role="tab" aria-controls="nav-housing"  aria-selected="false">주택</a>
+                                                </div>
+                                            </nav>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <br/>
                             
                             <div class="container">
                                 {% if user.is_authenticated %}
