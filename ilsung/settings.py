@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login.apps.LoginConfig', 
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -183,3 +184,13 @@ LOGOUT_REDIRECT_URL = '/'
 # Activate Django-Heroku.
 # import django_heroku
 # django_heroku.settings(locals())
+
+# REST_FRAMEWORK
+REST_FRAMEWORK = {
+        'DEFAULT_PERMISSION_CALSSES': [
+            # 'rest_framework.permissions.IsAdminUser',
+            # 'rest_farmework.permissions.IsAuthenticated',
+        ],
+        'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+        'PAGE_SIZE': 10
+}
