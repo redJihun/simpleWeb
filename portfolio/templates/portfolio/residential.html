@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>건축공사 실적</h2>
+						</header>
+						<section class="wrapper style5">
+                            
+                            <div class="container">
+                                {% if user.is_authenticated %}
+                                <div class="row">
+                                    <div class="col-6 col-12-medium">
+                                        <ul class="actions">
+                                            <li><a href="{% url 'portfolio:create' %}" class="button">글쓰기</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <div class="row">
+                                    {% for portfolio in portfolios %}
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="card border-0 shadow h-100">
+                                                <a href="{% url 'portfolio:detail' portfolio.id%}">
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <img src={{ portfolio.portfolioimage_set.first.image.url }} class="card-img-top embed-responsive-item" >
+                                                    </div>
+                                                    <div class="card-body text-center">
+                                                        <h5 class="card-title mb-0">{{ portfolio.title }}</h5>
+                                                        {% if user.is_authenticated %}
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <ul class="actions">
+                                                                    <a href="{% url 'portfolio:update' portfolio.id%}" class="button">수정</a>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-5">
+                                                                <ul class="actions">
+                                                                    <a href="{% url 'portfolio:delete' portfolio.id%}" class="button">삭제</a>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+
+                                </div>
+                            </div>
+						</section>
+					</article>
+{% endblock content %}

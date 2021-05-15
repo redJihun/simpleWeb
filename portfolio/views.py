@@ -14,6 +14,20 @@ def index(request):
     portfolios = reversed(Portfolio.objects.all())
     return render(request, template_name, {'portfolios':portfolios})
 
+def commercial(request):
+    template_name = 'portfolio/commercial.html'
+    portfolios = reversed(Portfolio.objects.all().filter(buildingType='C'))
+    return render(request, template_name, {'portfolios':portfolios})
+
+def residential(request):
+    template_name = 'portfolio/residential.html'
+    portfolios = reversed(Portfolio.objects.all().filter(buildingType='R'))
+    return render(request, template_name, {'portfolios':portfolios})
+
+def housing(request):
+    template_name = 'portfolio/housing.html'
+    portfolios = reversed(Portfolio.objects.all().filter(buildingType='H'))
+    return render(request, template_name, {'portfolios':portfolios})
 
 class CreatePortfolio(CreateView):
     template_name = 'portfolio/create.html'
