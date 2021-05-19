@@ -22,29 +22,34 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-try:
-    secret_file = os.path.join(BASE_DIR, 'secrets.json') # secrets.json 파일 위치를 명시
+from dotenv import load_dotenv
+load_dotenv()
 
-    with open(secret_file) as f:
-        secrets = json.loads(f.read())
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
+# try:
+    # secret_file = os.path.join(BASE_DIR, 'secrets.json') # secrets.json 파일 위치를 명시
+    
 
-    def get_secret(setting, secrets=secrets):
-        """비밀 변수를 가져오거나 명시적 예외를 반환한다."""
-        try:
-            return secrets[setting]
-        except KeyError:
-            error_msg = "Set the {} environment variable".format(setting)
-            raise ImproperlyConfigured(error_msg)
+    # with open(secret_file) as f:
+    #     secrets = json.loads(f.read())
 
-    SECRET_KEY = get_secret("SECRET_KEY")
-except:
-    SECRET_KEY = os.environ['SECRET_KEY']
+    # def get_secret(setting, secrets=secrets):
+    #     """비밀 변수를 가져오거나 명시적 예외를 반환한다."""
+    #     try:
+    #         return secrets[setting]
+    #     except KeyError:
+    #         error_msg = "Set the {} environment variable".format(setting)
+    #         raise ImproperlyConfigured(error_msg)
+
+    # SECRET_KEY = get_secret("SECRET_KEY")
+# except:
+#     SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = [os.environ.get('HOST','*'), ]
 
 
 # Application definition
@@ -62,7 +67,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login.apps.LoginConfig', 
-    'rest_framework',
+    # 'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -186,11 +191,11 @@ LOGOUT_REDIRECT_URL = '/'
 # django_heroku.settings(locals())
 
 # REST_FRAMEWORK
-REST_FRAMEWORK = {
-        'DEFAULT_PERMISSION_CALSSES': [
-            # 'rest_framework.permissions.IsAdminUser',
-            # 'rest_farmework.permissions.IsAuthenticated',
-        ],
-        'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-        'PAGE_SIZE': 10
-}
+# REST_FRAMEWORK = {
+#         'DEFAULT_PERMISSION_CALSSES': [
+#             # 'rest_framework.permissions.IsAdminUser',
+#             # 'rest_farmework.permissions.IsAuthenticated',
+#         ],
+#         'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+#         'PAGE_SIZE': 10
+# }

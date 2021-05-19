@@ -129,16 +129,25 @@ dmypy.json
 .pyre/
 
 # Commit template
-.gitmessage.txt
+gitmessage.txt
 
 # Django SECRET_KEY
 secrets.json
 
 # Upload data
-# media/
+media/
 
 # backup files 
 *.bak
 
 # DB
 *.sqlite3
+
+# Docker setting
+nginx/
+uwsgi/
+Docker*
+.dockerignore
+docker-compose.yml
+.env
+ilsung.sock
