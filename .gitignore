@@ -151,3 +151,5 @@ Docker*
 docker-compose.yml
 .env
 ilsung.sock
+autostart.ps1
+manualstart.ps1
